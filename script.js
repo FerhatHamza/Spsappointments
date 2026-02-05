@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8787"; // Change this after deploying!
+const API_URL = "https://sps-api.ferhathamza17.workers.dev"; // Change this after deploying!
 
 let currentUser = null;
 let pendingSchedule = [];
