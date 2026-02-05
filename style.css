@@ -1,0 +1,19 @@
+body { font-family: sans-serif; background: #f4f4f9; padding: 20px; }
+.container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.hidden { display: none; }
+input, select, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+button { background: #007bff; color: white; border: none; cursor: pointer; }
+button:hover { background: #0056b3; }
+.card { border: 1px solid #ddd; padding: 15px; margin-top: 20px; border-radius: 5px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+ul { list-style: none; padding: 0; }
+li { background: #eee; margin: 5px 0; padding: 10px; display: flex; justify-content: space-between; }
+
+/* Print Styles - Hides buttons/inputs, shows only the report */
+@media print {
+    body * { visibility: hidden; }
+    #admin-report-table, #admin-report-table * { visibility: visible; }
+    #admin-report-table { position: absolute; left: 0; top: 0; width: 100%; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 8px; text-align: left; }
+}
