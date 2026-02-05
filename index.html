@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPS Appointments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-section" class="container">
+        <h2>SPS Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="admin-section" class="container hidden">
+        <header>
+            <h2>Admin Dashboard</h2>
+            <button onclick="logout()">Logout</button>
+        </header>
+
+        <div class="card">
+            <h3>Add New Specialist</h3>
+            <input type="text" id="new-doc-name" placeholder="Doctor Username">
+            <input type="text" id="new-doc-pass" placeholder="Password">
+            <input type="text" id="new-doc-spec" placeholder="Specialty (e.g., Surgery)">
+            <button onclick="createDoctor()">Create Account</button>
+        </div>
+
+        <div class="card">
+            <h3>Monthly Plan (Print View)</h3>
+            <button onclick="loadAdminReport()">Refresh Plan</button>
+            <button onclick="window.print()">🖨️ Print Plan</button>
+            <div id="admin-report-table"></div>
+        </div>
+    </div>
+
+    <div id="doctor-section" class="container hidden">
+        <header>
+            <h2 id="doc-welcome">Welcome, Doctor</h2>
+            <button onclick="logout()">Logout</button>
+        </header>
+
+        <div class="card">
+            <h3>My Status</h3>
+            <label>
+                <input type="checkbox" id="doc-active-status"> I am back from vacation (Active)
+            </label>
+        </div>
+
+        <div class="card">
+            <h3>Plan My Schedule</h3>
+            <div class="input-group">
+                <input type="date" id="schedule-date">
+                <select id="schedule-type">
+                    <option value="consultation">Consultation</option>
+                    <option value="operation">Operation</option>
+                </select>
+                <button onclick="addDateToList()">Add Date</button>
+            </div>
+            <ul id="schedule-list"></ul>
+            <button class="save-btn" onclick="saveDoctorSchedule()">💾 Save Schedule</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
